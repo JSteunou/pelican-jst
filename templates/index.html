@@ -1,0 +1,17 @@
+{% import "macros.html" as macros %}
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if articles %}
+    {% for article in articles_page.object_list %}
+        {{ macros.display_article(article, SITEURL, False) }}
+      
+        {% if loop.last and (articles_page.has_previous() 
+        or not articles_page.has_previous() and loop.length > 1) %}
+            {% include 'pagination.html' %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

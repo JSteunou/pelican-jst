@@ -1,0 +1,7 @@
+{% import "macros.html" as macros %}
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+    {{ macros.display_article(page, SITEURL, with_aside=False) }}
+{% endblock content %}

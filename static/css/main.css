@@ -1,0 +1,115 @@
+/* Imports */
+@import url('http://fonts.googleapis.com/css?family=Asap&subset=latin');
+@import url("normalize.css");
+@import url("pygment.css");
+
+
+/*****************
+ *   global
+ *****************/
+
+body {
+    background-color: #FEFEFE;
+    color: #433;
+    /*font-family: "Karla", "Ubuntu", "Calibri", "Verdana", sans-serif;*/
+    font-family: "Asap", "Ubuntu", "Calibri", "Verdana", sans-serif;
+    font-size: 19px;
+    line-height: 28px;
+    margin: 0;
+    padding: 20px 0;
+}
+
+a {
+  color: #655;
+}
+a:hover {
+    color: #225555;
+}
+
+h1 {
+    font-size: 27px;
+}
+h2 {
+    font-size: 23px;
+}
+h3 {
+    font-size: 20px;
+}
+h1 a, h2 a, h3 a {
+    color: #433;
+    text-decoration: none;
+}
+
+code {
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    /*color: #DD1144;*/
+    padding: 2px 4px;
+}
+pre code {
+    border: none;
+    background-color: inherit;
+}
+code, pre {
+    border-radius: 3px 3px 3px 3px;
+    color: #333333;
+    font-family: 'Consolas','Menlo','Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0 3px 2px;
+    white-space: pre-wrap;
+}
+
+/*****************
+ *     index
+ *****************/
+article + article {
+    margin-top: 40px;
+}
+
+
+/*****************
+ *     page
+ *****************/
+
+body > section,
+body > header > h1,
+body > header > h2 {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*****************
+ *   header
+ *****************/
+
+header {
+    border-bottom: 1px solid #DDD;
+    text-align: right;
+}
+header > h1 {
+    text-transform: uppercase;
+}
+header > h2 a {
+    color: #AAA;
+}
+header > h2 a:hover {
+    color: #333;
+}
+
+
+/*****************
+ *   articles
+ *****************/
+
+article > h1:first-child,
+article > h2:first-child {
+    margin-bottom: 0;
+}
+article > aside {
+    margin-top: 0;
+    font-style: italic;
+    color: #AAA;
+}
