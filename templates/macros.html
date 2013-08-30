@@ -1,17 +1,25 @@
 {% macro display_article(article, SITEURL, full=True, with_aside=True) %}
-    <article>
-        <h1>
-            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-               title="Permalink to {{ article.title|striptags }}">{{ article.title}}</a>
-        </h1>
-      {% if with_aside %}  
-        <aside>publié le <abbr title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>· {% if article.tags %}<p>{% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">#{{ tag }}</a> {% endfor %}</p>{% endif %}</aside>
-      {% endif %}
+  <article>
+    <h1>
+      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+        title="Permalink to {{ article.title|striptags }}">{{ article.title}}</a>
+    </h1>
+  {% if with_aside %}  
+    <footer>
+      <p>{{ article.locale_date }}</p>
+    {% if article.tags %}
+      <ul>{% for tag in article.tags %}<li><a href="{{ SITEURL }}/{{ tag.url }}">#{{ tag }}</a></li>{% endfor %}</ul>
+    {% endif %}
+    </footer>
+  {% endif %}
       
+    <section class="post-content">
       {% if full %}
-      {{ article.content }}
+      {{ article.content|replace('<blockquote>', '<blockquote><i class="icon-quote-left icon-3x pull-left icon-muted"></i>') }}
       {% else %}
       {{ article.summary }}
       {% endif %}
-    </article>
+    </section>
+      
+  </article>
 {% endmacro %}

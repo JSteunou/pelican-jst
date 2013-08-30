@@ -1,6 +1,7 @@
 /* Imports */
 @import url('http://fonts.googleapis.com/css?family=Asap&subset=latin');
 @import url("normalize.css");
+@import url("font-awesome.min.css");
 @import url("pygment.css");
 
 
@@ -60,6 +61,20 @@ code, pre {
     white-space: pre-wrap;
 }
 
+blockquote {
+    margin-left: 0;
+}
+
+blockquote,
+blockquote > i[class^="icon-"] {
+    font-style: italic;
+}
+
+blockquote > p {
+    margin-left: 70px;
+}
+
+
 /*****************
  *     index
  *****************/
@@ -75,7 +90,7 @@ article + article {
 body > section,
 body > header > h1,
 body > header > h2 {
-    width: 960px;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -108,8 +123,16 @@ article > h1:first-child,
 article > h2:first-child {
     margin-bottom: 0;
 }
-article > aside {
+article > footer {
+    display: inline-block;
+    vertical-align: top;
+    width: 27%;
     margin-top: 0;
     font-style: italic;
     color: #AAA;
+}
+
+article > section.post-content {
+    display: inline-block;
+    width: 70%;
 }
