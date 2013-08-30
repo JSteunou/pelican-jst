@@ -4,6 +4,7 @@
       <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
         title="Permalink to {{ article.title|striptags }}">{{ article.title}}</a>
     </h1>
+    
   {% if with_aside %}  
     <footer>
       <p class="date">{{ article.locale_date }}</p>
@@ -14,9 +15,12 @@
       <ul class="tags-list">{% for tag in article.tags %}<li><a href="{{ SITEURL }}/{{ tag.url }}"><i class="icon-tag">&nbsp;</i>{{ tag }}</a></li>{% endfor %}</ul>
     {% endif %}
     </footer>
+    
+    <section class="post-content">
+  {% else %}
+    <section>
   {% endif %}
       
-    <section class="post-content">
       {% if full %}
       {{ article.content|replace('<blockquote>', '<blockquote><i class="icon-quote-left icon-3x pull-left icon-muted"></i>') }}
       {% else %}

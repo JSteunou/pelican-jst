@@ -124,13 +124,13 @@ article > h2:first-child {
 
 article > section.post-content {
     display: inline-block;
-    width: 70%;
+    width: 78%;
 }
 
 article > footer {
     display: inline-block;
     vertical-align: top;
-    width: 27%;
+    width: 20%;
     margin-top: 0;
     font-style: italic;
     color: #AAA;
