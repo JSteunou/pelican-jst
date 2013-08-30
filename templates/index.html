@@ -6,9 +6,10 @@
 {% if articles %}
     {% for article in articles_page.object_list %}
         {{ macros.display_article(article, SITEURL, False) }}
-      
-        {% if loop.last and (articles_page.has_previous() 
-        or not articles_page.has_previous() and loop.length > 1) %}
+        
+        {% if loop.last and
+            ( (loop.length == DEFAULT_PAGINATION  and articles_page.has_next()) or
+              (loop.length < DEFAULT_PAGINATION   and articles_page.has_previous())) %}
             {% include 'pagination.html' %}
         {% endif %}
     {% endfor %}
