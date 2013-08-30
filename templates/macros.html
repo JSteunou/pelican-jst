@@ -6,9 +6,12 @@
     </h1>
   {% if with_aside %}  
     <footer>
-      <p>{{ article.locale_date }}</p>
+      <p class="date">{{ article.locale_date }}</p>
+    {% if article.category %}
+      <p class="category"><a href="{{ SITEURL }}/{{ article.category.url }}"><i class="icon-folder-close">&nbsp;</i>{{ article.category }}</a></p>
+    {% endif %}
     {% if article.tags %}
-      <ul>{% for tag in article.tags %}<li><a href="{{ SITEURL }}/{{ tag.url }}">#{{ tag }}</a></li>{% endfor %}</ul>
+      <ul class="tags-list">{% for tag in article.tags %}<li><a href="{{ SITEURL }}/{{ tag.url }}"><i class="icon-tag">&nbsp;</i>{{ tag }}</a></li>{% endfor %}</ul>
     {% endif %}
     </footer>
   {% endif %}

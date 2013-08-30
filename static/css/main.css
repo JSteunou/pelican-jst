@@ -64,12 +64,10 @@ code, pre {
 blockquote {
     margin-left: 0;
 }
-
 blockquote,
 blockquote > i[class^="icon-"] {
     font-style: italic;
 }
-
 blockquote > p {
     margin-left: 70px;
 }
@@ -123,6 +121,12 @@ article > h1:first-child,
 article > h2:first-child {
     margin-bottom: 0;
 }
+
+article > section.post-content {
+    display: inline-block;
+    width: 70%;
+}
+
 article > footer {
     display: inline-block;
     vertical-align: top;
@@ -132,7 +136,17 @@ article > footer {
     color: #AAA;
 }
 
-article > section.post-content {
-    display: inline-block;
-    width: 70%;
+article > footer > .category,
+article > footer > .tags-list {
+    font-size: 0.8em;
+    line-height: 0.8em;
 }
+article > footer > .category a,
+article > footer > .tags-list a {
+    text-decoration: none;
+}
+article > footer > ul.tags-list {
+    list-style: none;
+    padding-left: 0;
+}
+
