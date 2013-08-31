@@ -184,3 +184,7 @@ article > footer > ul.tags-list {
     margin-top: 40px;
     text-align: right;
  }
+ .paginator a {
+    text-decoration: none;
+}
+ 
