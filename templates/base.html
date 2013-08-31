@@ -40,7 +40,14 @@
     </aside>
     
     <footer>
-        <nav></nav>
+        <p>
+            {% for name, url, icon in LINKS %}
+            <a href="{{ url }}" title="{{ name }}">{% if icon %}<i class="{{ icon }}">&nbsp;</i>{% endif %}{{ name }}</a>
+            {% endfor %}
+        </p>
+        {% if FOOTER_LINE %}
+        <p class="footer_line">{{ FOOTER_LINE }}</p>
+        {% endif %}
     </footer>
 
 </body>
