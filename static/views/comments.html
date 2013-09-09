@@ -17,11 +17,11 @@
 
 <form name="commentForm" ng-submit="submit(commentForm.$valid)">
     <fieldset>
-        <legend>Post your comment:</legend>
+        <legend>Add your comment:</legend>
         <div ng-show="error.status">An error occured: {{ error.status }}</div>
-        <div><input name="authorName"  ng-model="comment.author_name"   type="text" required="true" placeholder="Name"></div>
-        <div><input name="authorEmail" ng-model="comment.author_email" type="email" required="true" placeholder="Email (never public)"></div>
+        <input name="authorName"  ng-model="comment.author_name"   type="text" required="true" placeholder="Name">
+        <input name="authorEmail" ng-model="comment.author_email" type="email" required="true" placeholder="Email (never public)">
         <textarea rows="6" name="content" ng-model="comment.content" required="true" placeholder="Comment..."></textarea>
-        <div><button type="submit" class="btn">Submit</button></div>
+        <button type="submit">Envoyer</button>
     </fieldset>
 </form>

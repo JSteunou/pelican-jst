@@ -64,6 +64,7 @@
                 
                 $scope.comment.$save().then(
                     function(comment) {
+                        delete $scope.error;
                         $scope.comment = new Comments();
                         $scope.comments.push(normalize(comment));
                     },
