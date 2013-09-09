@@ -1,6 +1,28 @@
-
+/*
+ Comimoc front v1.0
+ (c) 2013 Jérôme Steunou https://github.com/JSteunou/comimoc-front
+ License: BSD
+*/
 
 (function(comimoc, angular) {
+    
+    comimoc.constant('SimpleI18n', {
+        'en': {
+            'zoneTitle': {'0': 'No comments yet.',
+                          'one': '1 comment so far.',
+                          'other': '{} comments.'},
+            'formTitle': 'Add a comment:',
+            'formSubmit': 'Submit'
+        },
+        
+        'fr': {
+            'zoneTitle': {'0': 'Pas encore de commentaires.',
+                          'one': '1 commentaire.',
+                          'other': '{} commentaires.'},
+            'formTitle': 'Ajouter un commentaire:',
+            'formSubmit': 'Envoyer'
+        },
+    });
     
     comimoc.factory('Comments', ['$resource', 'COMIMOC_CONFIG', function($resource, COMIMOC_CONFIG) {
         // expose `Comments` resource service
@@ -19,7 +41,8 @@
         
     }]);
     
-    comimoc.controller('CommentCtrl', ['$scope', 'Comments', 'COMIMOC_CONFIG', function($scope, Comments, COMIMOC_CONFIG) {
+    comimoc.controller('CommentCtrl', ['$scope', 'Comments', 'COMIMOC_CONFIG', 'SimpleI18n',
+                       function($scope, Comments, COMIMOC_CONFIG, SimpleI18n) {
         // handle getting and posting new comments
         
         
@@ -46,8 +69,11 @@
             return comment;
         };
         
+        var locale = COMIMOC_CONFIG.LOCALE || 'en';
         
         // -- public --
+        
+        $scope.i18n = SimpleI18n[locale];
         
         $scope.comments = Comments.query({website: getWebsite(), page: getPage()});
         $scope.comments.$promise.then(function(comments) {

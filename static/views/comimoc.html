@@ -1,13 +1,10 @@
-<h1 title="comments"><ng-pluralize count="comments.length"
-                  when="{'0': 'No comments yet.',
-                         'one': '1 comment so far.',
-                         'other': '{} comments.'}">
-    </ng-pluralize>
+<h1 title="comments">
+    <ng-pluralize count="comments.length" when='i18n.zoneTitle'></ng-pluralize>
 </h1>
 
 
 <div id="comment-{{ comment.id }}" class="comment" ng-repeat="comment in comments">
-    <div class="meta"><a href="#{{ comment.id }}">
+    <div class="meta"><a href="#comment-{{ comment.id }}">
         <img src="http://www.gravatar.com/avatar/{{ comment.author_email}}?d=retro" />
         <p><span class="author">{{ comment.author_name}}</span> <span class="when">{{ comment.when|date:'MMM d, y HH:mm:ss' }}</span></p>
     </a></div>
@@ -17,11 +14,11 @@
 
 <form name="commentForm" ng-submit="submit(commentForm.$valid)">
     <fieldset>
-        <legend>Add your comment:</legend>
+        <legend>{{ i18n.formTitle }}</legend>
         <div ng-show="error.status">An error occured: {{ error.status }}</div>
         <input name="authorName"  ng-model="comment.author_name"   type="text" required="true" placeholder="Name">
         <input name="authorEmail" ng-model="comment.author_email" type="email" required="true" placeholder="Email (never public)">
         <textarea rows="6" name="content" ng-model="comment.content" required="true" placeholder="Comment..."></textarea>
-        <button type="submit">Envoyer</button>
+        <button type="submit">{{ i18n.formSubmit }}</button>
     </fieldset>
 </form>

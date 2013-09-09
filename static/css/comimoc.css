@@ -8,7 +8,7 @@ div[ng-app="comimoc"] .comment {
 }
 div[ng-app="comimoc"] .meta {
     position: relative;
-    background-color: #DDD;
+    background-color: #EEE;
     border-radius: 10px;
 }
 div[ng-app="comimoc"] .meta a {
@@ -19,7 +19,7 @@ div[ng-app="comimoc"] .meta img {
     position: absolute;
     left: 40px;
     top: -4px;
-    border: 6px solid #DDD;
+    border: 6px solid #EEE;
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(160, 160, 160, 0.8);
 }
