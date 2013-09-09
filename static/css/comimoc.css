@@ -39,6 +39,9 @@ div[ng-app="comimoc"] .meta p,
 div[ng-app="comimoc"] .content {
     margin-left: 20%;
 }
+div[ng-app="comimoc"] .content {
+    white-space: pre-line;
+}
 
 
 /***********************
