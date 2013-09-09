@@ -3,6 +3,7 @@
 @import url("normalize.css");
 @import url("font-awesome.min.css");
 @import url("pygment.css");
+@import url("comimoc.css");
 
 
 /*****************
@@ -150,6 +151,7 @@ article > h2:first-child {
 
 article > section.post-content {
     display: inline-block;
+    vertical-align: top;
     width: 78%;
 }
 

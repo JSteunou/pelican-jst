@@ -5,4 +5,24 @@
 
 {% block content %}
     {{ macros.display_article(article, SITEURL) }}
+    
+    <div ng-app="comimoc" ng-controller="CommentCtrl" ng-include="'{{ SITEURL }}/theme/views/comments.html'"></div>
 {% endblock content %}
+
+{% block end_body %}
+    <script src="{{ SITEURL }}/theme/js/angular.min.js"></script>
+    <script src="{{ SITEURL }}/theme/js/angular-resource.min.js"></script>
+    
+    <script>
+        angular.module('comimoc', ['ngResource'])
+            .constant('COMIMOC_CONFIG', {
+                'RESOURCES_LOCATION':   'http://comimoc.herokuapp.com',
+                'WEBSITE':              'www.comimoc.dev',
+                'HASH':                 false,
+                'ARGS':                 false
+                });
+    </script>
+    
+    <script src="{{ SITEURL }}/theme/js/app.js"></script>
+
+{% endblock end_body%}
