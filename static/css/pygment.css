@@ -40,7 +40,7 @@
 .ne { color: #bbbbbb } /* Name.Exception */
 .nf { color: #447fcf } /* Name.Function */
 .nl { color: #d0d0d0 } /* Name.Label */
-.nn { color: #447fcf; text-decoration: underline } /* Name.Namespace */
+.nn { color: #447fcf; /* text-decoration: underline */ } /* Name.Namespace */
 .nx { color: #d0d0d0 } /* Name.Other */
 .py { color: #d0d0d0 } /* Name.Property */
 .nt { color: #6ab825; font-weight: bold } /* Name.Tag */
