@@ -1,5 +1,12 @@
 div[ng-app="comimoc"] {
-    margin-top: 60px;
+    margin-top: 6em;
+}
+div[ng-app="comimoc"]:before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #DDD, rgba(255, 255, 255, 0));
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 2em auto;
 }
 
 /***********************

@@ -128,6 +128,7 @@ body > footer:before {
 body > footer {
     font-size: 0.8em;
     text-align: center;
+    margin-top: 6em;
 }
 body > footer a {
     text-decoration: none;
@@ -147,6 +148,11 @@ body > footer .footer_line {
 article > h1:first-child,
 article > h2:first-child {
     margin-bottom: 0;
+}
+
+article > section > h2 {
+    margin-top: 2em;
+    font-style: italic;
 }
 
 article > section.post-content {
