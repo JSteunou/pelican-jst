@@ -6,13 +6,25 @@
 {% block content %}
     {{ macros.display_article(article, SITEURL) }}
     
+    {% if USE_COMIMOC %}
+    
+    {% block comimoc %}
+    {% if article.comimocoff is undefined %}
     <div ng-app="comimoc" ng-controller="CommentCtrl" ng-include="'{{ SITEURL }}/theme/views/comimoc.html'"></div>
+    {% endif %}
+    {% endblock comimoc %}
+    
+    {% endif %}
+
 {% endblock content %}
 
 
 {% block end_body %}
 
     {% if USE_COMIMOC %}
+    
+    {% block comimoc %}
+    {% if article.comimocoff is undefined %}
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-resource.min.js"></script>
     
@@ -23,11 +35,14 @@
                 'WEBSITE':              '{{ COMIMOC_WEBSITE or SITENAME }}',
                 'HASH':                 {{ COMIMOC_HASH or 'false' }},
                 'ARGS':                 {{ COMIMOC_ARGS or 'false' }},
-                'LOCALE':               '{{ DEFAULT_LANG or "en" }}',
+                'LOCALE':               '{{ article.lang or DEFAULT_LANG or "en" }}',
                 });
     </script>
     
     <script src="{{ SITEURL }}/theme/js/comimoc.js"></script>
+    {% endif %}
+    {% endblock comimoc %}
+    
     {% endif %}
 
 {% endblock end_body%}

@@ -1,7 +1,47 @@
 {% import "macros.html" as macros %}
 {% extends "base.html" %}
-{% block title %}{{ page.title }}{% endblock %}
+
+{% block title %}{{ page.title|striptags }}{% endblock %}
 
 {% block content %}
     {{ macros.display_article(page, SITEURL, with_aside=False) }}
+    
+    {% if USE_COMIMOC %}
+    
+    {% block comimoc %}
+    {% if page.comimocon is defined %}
+    <div ng-app="comimoc" ng-controller="CommentCtrl" ng-include="'{{ SITEURL }}/theme/views/comimoc.html'"></div>
+    {% endif %}
+    {% endblock comimoc %}
+    
+    {% endif %}
+
 {% endblock content %}
+
+{% block end_body %}
+
+    {% if USE_COMIMOC %}
+    
+    {% block comimoc %}
+    {% if page.comimocon is defined %}
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-resource.min.js"></script>
+    
+    <script>
+        angular.module('comimoc', ['ngResource'])
+            .constant('COMIMOC_CONFIG', {
+                'RESOURCES_LOCATION':   '{{ COMIMOC_RESOURCES_LOCATION }}',
+                'WEBSITE':              '{{ COMIMOC_WEBSITE or SITENAME }}',
+                'HASH':                 {{ COMIMOC_HASH or 'false' }},
+                'ARGS':                 {{ COMIMOC_ARGS or 'false' }},
+                'LOCALE':               '{{ page.lang or DEFAULT_LANG or "en" }}',
+                });
+    </script>
+    
+    <script src="{{ SITEURL }}/theme/js/comimoc.js"></script>
+    {% endif %}
+    {% endblock comimoc %}
+    
+    {% endif %}
+
+{% endblock end_body%}
