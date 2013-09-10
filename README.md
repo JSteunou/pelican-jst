@@ -1,6 +1,6 @@
 # Pelican JST
 
-This is the theme I made for my blog with Pelican. It comes with a full integration of [Comimoc Front](https://github.com/JSteunou/comimoc-front-angularjs) so you can have your comments handled by [Comimoc Back](https://github.com/JSteunou/comimoc-front-angularjs).
+This is the theme I made for my blog with Pelican. It comes with a full integration of [Comimoc Front](https://github.com/JSteunou/comimoc-front-angularjs) so you can have your comments handled by [Comimoc Back](https://github.com/JSteunou/comimoc-back).
 
 I am not good at picking fancy name so I just named it Pelican JST because it is the http://www.jeromesteunou.net theme.
 
