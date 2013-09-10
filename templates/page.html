@@ -8,11 +8,11 @@
     
     {% if USE_COMIMOC %}
     
-    {% block comimoc %}
+    {% block view_comimoc %}
     {% if page.comimocon is defined %}
     <div ng-app="comimoc" ng-controller="CommentCtrl" ng-include="'{{ SITEURL }}/theme/views/comimoc.html'"></div>
     {% endif %}
-    {% endblock comimoc %}
+    {% endblock view_comimoc %}
     
     {% endif %}
 
